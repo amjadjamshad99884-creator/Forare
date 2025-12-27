@@ -8,13 +8,18 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 async function getContent() {
-  const content = await prisma.siteContent.findMany({
-    where: { section: 'home' }
-  });
-  return content.reduce((acc: Record<string, string>, item: { key: string; value: string }) => {
-    acc[item.key] = item.value;
-    return acc;
-  }, {} as Record<string, string>);
+  try {
+    const content = await prisma.siteContent.findMany({
+      where: { section: 'home' }
+    });
+    return content.reduce((acc: Record<string, string>, item: { key: string; value: string }) => {
+      acc[item.key] = item.value;
+      return acc;
+    }, {} as Record<string, string>);
+  } catch (error) {
+    console.log('Database not available during build, using defaults');
+    return {};
+  }
 }
 
 export default async function Home() {
