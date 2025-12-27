@@ -99,11 +99,6 @@ export default function AdminPortalLogin() {
                             {isLoading ? 'Signing in...' : 'Sign In'}
                         </Button>
                     </form>
-
-                    <div className="mt-6 text-center text-sm text-gray-500">
-                        <p>Default credentials:</p>
-                        <p className="font-mono mt-1">admin / Forare2025!</p>
-                    </div>
                 </div>
             </div>
         </div>
