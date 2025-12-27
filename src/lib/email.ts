@@ -11,7 +11,7 @@ interface EmailData {
 export async function sendEmail({ to, subject, html }: EmailData) {
     try {
         const data = await resend.emails.send({
-            from: 'Forare <noreply@forare.eu>',
+            from: 'Forare <noreply@send.forare.eu>',
             to: [to],
             subject,
             html,
