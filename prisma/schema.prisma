@@ -1,0 +1,28 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Submission {
+  id        String   @id @default(cuid())
+  type      String   // Booking, Delivery, Moving, Driver, Contact
+  payload   String   // JSON string of the form data
+  status    String   @default("PENDING") // PENDING, PROCESSED, ARCHIVED
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model SiteContent {
+  id        String   @id @default(cuid())
+  key       String   @unique // e.g., "home_hero_title"
+  value     String   // The actual content
+  section   String   // e.g., "home", "about"
+  updatedAt DateTime @updatedAt
+}
