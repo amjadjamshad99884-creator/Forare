@@ -32,9 +32,22 @@ export function ContactForm() {
     });
 
     const onSubmit = async (data: ContactFormValues) => {
-        console.log("Contact form data:", data);
-        await new Promise((resolve) => setTimeout(resolve, 1500));
-        setIsSubmitted(true);
+        try {
+            const response = await fetch('/api/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                setIsSubmitted(true);
+            } else {
+                alert('Failed to submit. Please try again.');
+            }
+        } catch (error) {
+            console.error('Submission error:', error);
+            alert('Failed to submit. Please try again.');
+        }
     };
 
     if (isSubmitted) {
