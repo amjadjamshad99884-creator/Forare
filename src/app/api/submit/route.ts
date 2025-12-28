@@ -12,8 +12,8 @@ export async function POST(request: Request) {
         let type = 'Unknown';
         if (body.pickup && body.dropoff) type = 'Booking';
         else if (body.companyName) type = 'Delivery';
-        else if (body.moveType) type = 'Moving';
-        else if (body.licenseNumber) type = 'Driver';
+        else if (body.moveType || body.fromAddress) type = 'Moving';
+        else if (body.licenseType || body.licenseNumber || body.serviceInterest) type = 'Driver';
         else if (body.subject) type = 'Contact';
 
         // Store in database
