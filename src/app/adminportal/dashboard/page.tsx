@@ -135,7 +135,7 @@ export default function AdminDashboard() {
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black flex">
             {/* Sidebar */}
-            <aside className={`${sidebarOpen ? 'w-64' : 'w-20'} bg-black/50 backdrop-blur-lg border-r border-white/10 transition-all duration-300 flex flex-col`}>
+            <aside className={`${sidebarOpen ? 'w-64' : 'w-20'} bg-black/50 backdrop-blur-lg border-r border-white/10 transition-all duration-300 flex flex-col fixed h-screen z-50`}>
                 {/* Logo */}
                 <div className="p-6 border-b border-white/10">
                     <div className="flex items-center justify-between">
@@ -154,7 +154,7 @@ export default function AdminDashboard() {
                 </div>
 
                 {/* Menu Items */}
-                <nav className="flex-1 p-4 space-y-2">
+                <nav className="flex-1 p-4 space-y-2 overflow-y-auto">
                     {menuItems.map((item) => (
                         <button
                             key={item.id}
@@ -178,23 +178,20 @@ export default function AdminDashboard() {
                             )}
                         </button>
                     ))}
-                </nav>
 
-                {/* Logout */}
-                <div className="p-4 border-t border-white/10">
-                    <Button
+                    {/* Logout Button in Menu */}
+                    <button
                         onClick={handleLogout}
-                        variant="outline"
-                        className={`w-full border-white/20 text-white hover:bg-white/10 ${!sidebarOpen && 'px-0'}`}
+                        className="w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-red-400 hover:text-red-300 hover:bg-red-500/10 border-t border-white/10 mt-4 pt-4"
                     >
-                        <LogOut className="w-4 h-4" />
-                        {sidebarOpen && <span className="ml-2">Logout</span>}
-                    </Button>
-                </div>
+                        <LogOut className="w-5 h-5 flex-shrink-0" />
+                        {sidebarOpen && <span className="flex-1 text-left font-medium">Logout</span>}
+                    </button>
+                </nav>
             </aside>
 
             {/* Main Content */}
-            <main className="flex-1 overflow-auto">
+            <main className={`flex-1 overflow-auto ${sidebarOpen ? 'ml-64' : 'ml-20'} transition-all duration-300`}>
                 <div className="p-8">
                     {/* Header */}
                     <div className="mb-8">
