@@ -38,7 +38,6 @@ export function getConfirmationEmail(type: string, name: string, data: any): str
             <div style="background: #F3F4F6; padding: 30px; text-align: center; border-top: 1px solid #E5E7EB;">
                 <p style="color: #6B7280; margin: 0 0 10px 0; font-size: 14px;">Need help? Contact us at <a href="mailto:support@forare.eu" style="color: #F59E0B; text-decoration: none;">support@forare.eu</a></p>
                 <p style="color: #9CA3AF; margin: 0; font-size: 12px;">© 2025 Forare. All rights reserved.</p>
-                <p style="color: #9CA3AF; margin: 5px 0 0 0; font-size: 12px;">Operated by Codexier AB (Org.nr 559497-3082)</p>
             </div>
         </div>
     `;

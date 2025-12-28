@@ -68,7 +68,6 @@ export function Footer() {
 
                 <div className="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
                     <p>&copy; {new Date().getFullYear()} Forare. All rights reserved.</p>
-                    <p className="mt-2">Forare is operated by Codexier AB (Org.nr 559497-3082)</p>
                 </div>
             </div>
         </footer>
