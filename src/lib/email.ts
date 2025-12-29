@@ -1,6 +1,7 @@
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialize Resend only if API key is available
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 interface EmailData {
     to: string;
@@ -9,6 +10,12 @@ interface EmailData {
 }
 
 export async function sendEmail({ to, subject, html }: EmailData) {
+    // If no API key, log warning and return success (don't block submissions)
+    if (!resend) {
+        console.warn('RESEND_API_KEY not configured. Email not sent.');
+        return { success: false, error: 'Email service not configured' };
+    }
+
     try {
         const data = await resend.emails.send({
             from: 'Forare <noreply@forare.eu>',
