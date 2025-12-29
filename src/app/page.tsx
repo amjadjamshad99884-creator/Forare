@@ -101,54 +101,54 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Core Services Section - Minimalistic & Professional */}
-      <section className="py-32 bg-gradient-to-b from-[#0B1120] to-[#151B2B]">
+      {/* Core Services Section - Premium & Clean (Uber-inspired) */}
+      <section className="py-32 bg-white">
         <div className="container mx-auto px-4">
           <FadeIn className="text-center mb-20 max-w-3xl mx-auto">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white">Our Core Services</h2>
-            <p className="text-xl text-gray-400">
-              Comprehensive transport solutions designed for modern businesses
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">Our Core Services</h2>
+            <p className="text-xl text-gray-600">
+              Professional transport solutions for every need
             </p>
           </FadeIn>
 
-          <div className="grid lg:grid-cols-3 gap-6">
+          <div className="grid lg:grid-cols-3 gap-8">
             {/* 1. Moving Logistics */}
             <FadeIn delay={0.1} className="group">
-              <div className="relative h-full bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/[0.05] transition-all duration-500 overflow-hidden">
-                {/* Subtle gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative h-full bg-white border border-gray-200 rounded-3xl p-10 hover:shadow-2xl hover:border-orange-200 transition-all duration-500">
+                {/* Subtle gradient on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
 
                 <div className="relative z-10">
                   {/* Icon */}
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <Truck className="w-7 h-7 text-orange-400" />
+                  <div className="w-16 h-16 rounded-2xl bg-orange-100 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+                    <Truck className="w-8 h-8 text-orange-600" />
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-orange-400 transition-colors">
+                  <h3 className="text-3xl font-bold mb-4 text-gray-900">
                     Moving Logistics
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-400 mb-8 leading-relaxed">
+                  <p className="text-gray-600 mb-8 leading-relaxed text-lg">
                     Professional relocation services for homes and offices with expert handling and secure packing.
                   </p>
 
                   {/* Features */}
-                  <div className="space-y-3 mb-8">
+                  <div className="space-y-4 mb-10">
                     {['Expert Handling Team', 'Secure Packing', 'Full Insurance'].map((item, i) => (
-                      <div key={i} className="flex items-center gap-3 text-sm text-gray-300">
-                        <div className="w-1.5 h-1.5 rounded-full bg-orange-400" />
-                        <span>{item}</span>
+                      <div key={i} className="flex items-center gap-3 text-gray-700">
+                        <CheckCircle2 className="w-5 h-5 text-orange-600 flex-shrink-0" />
+                        <span className="font-medium">{item}</span>
                       </div>
                     ))}
                   </div>
 
                   {/* CTA */}
                   <Link href="/moving">
-                    <Button className="w-full bg-white/5 border border-white/10 text-white hover:bg-orange-500 hover:border-orange-500 h-12 rounded-xl font-medium transition-all duration-300 group/btn">
+                    <Button className="w-full bg-gray-900 hover:bg-orange-600 text-white h-14 rounded-2xl font-semibold text-base transition-all duration-300">
                       Get Quote
-                      <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                      <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
                   </Link>
                 </div>
@@ -157,43 +157,43 @@ export default async function Home() {
 
             {/* 2. Delivery Solutions */}
             <FadeIn delay={0.2} className="group">
-              <div className="relative h-full bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/[0.05] transition-all duration-500 overflow-hidden">
-                {/* Subtle gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative h-full bg-white border border-gray-200 rounded-3xl p-10 hover:shadow-2xl hover:border-blue-200 transition-all duration-500">
+                {/* Subtle gradient on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
 
                 <div className="relative z-10">
                   {/* Icon */}
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-600/10 border border-blue-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-7 h-7 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-8 h-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                     </svg>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-3xl font-bold mb-4 text-gray-900">
                     Delivery Solutions
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-400 mb-8 leading-relaxed">
+                  <p className="text-gray-600 mb-8 leading-relaxed text-lg">
                     Fast and secure delivery network ensuring your items reach safely and on time, every time.
                   </p>
 
                   {/* Features */}
-                  <div className="space-y-3 mb-8">
+                  <div className="space-y-4 mb-10">
                     {['Real-time Tracking', 'Same-day Options', 'Digital Proof'].map((item, i) => (
-                      <div key={i} className="flex items-center gap-3 text-sm text-gray-300">
-                        <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
-                        <span>{item}</span>
+                      <div key={i} className="flex items-center gap-3 text-gray-700">
+                        <CheckCircle2 className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                        <span className="font-medium">{item}</span>
                       </div>
                     ))}
                   </div>
 
                   {/* CTA */}
                   <Link href="/delivery">
-                    <Button className="w-full bg-white/5 border border-white/10 text-white hover:bg-blue-500 hover:border-blue-500 h-12 rounded-xl font-medium transition-all duration-300 group/btn">
+                    <Button className="w-full bg-gray-900 hover:bg-blue-600 text-white h-14 rounded-2xl font-semibold text-base transition-all duration-300">
                       Ship Now
-                      <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                      <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
                   </Link>
                 </div>
@@ -202,43 +202,43 @@ export default async function Home() {
 
             {/* 3. Passenger Rides */}
             <FadeIn delay={0.3} className="group">
-              <div className="relative h-full bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/[0.05] transition-all duration-500 overflow-hidden">
-                {/* Subtle gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative h-full bg-white border border-gray-200 rounded-3xl p-10 hover:shadow-2xl hover:border-primary/30 transition-all duration-500">
+                {/* Subtle gradient on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
 
                 <div className="relative z-10">
                   {/* Icon */}
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-yellow-600/10 border border-primary/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <svg className="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="w-16 h-16 rounded-2xl bg-yellow-100 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
                     </svg>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-primary transition-colors">
+                  <h3 className="text-3xl font-bold mb-4 text-gray-900">
                     Passenger Rides
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-400 mb-8 leading-relaxed">
+                  <p className="text-gray-600 mb-8 leading-relaxed text-lg">
                     Premium passenger transport for daily commutes or special occasions with verified drivers.
                   </p>
 
                   {/* Features */}
-                  <div className="space-y-3 mb-8">
+                  <div className="space-y-4 mb-10">
                     {['Verified Drivers', 'Premium Fleet', 'Fixed Pricing'].map((item, i) => (
-                      <div key={i} className="flex items-center gap-3 text-sm text-gray-300">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                        <span>{item}</span>
+                      <div key={i} className="flex items-center gap-3 text-gray-700">
+                        <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                        <span className="font-medium">{item}</span>
                       </div>
                     ))}
                   </div>
 
                   {/* CTA */}
                   <Link href="/passenger">
-                    <Button className="w-full bg-white/5 border border-white/10 text-white hover:bg-primary hover:border-primary h-12 rounded-xl font-medium transition-all duration-300 group/btn">
+                    <Button className="w-full bg-gray-900 hover:bg-primary text-white h-14 rounded-2xl font-semibold text-base transition-all duration-300">
                       Book Ride
-                      <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                      <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
                   </Link>
                 </div>
@@ -309,7 +309,7 @@ export default async function Home() {
                   </div>
 
                   <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight">
-                    Become a <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-yellow-300">Partner</span>
+                    Join <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-yellow-300">Us</span>
                   </h2>
 
                   <p className="text-xl text-gray-400 mb-10 leading-relaxed max-w-2xl">
