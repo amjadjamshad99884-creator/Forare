@@ -252,6 +252,8 @@ export default async function Home() {
               </div>
             </FadeIn>
           </div>
+        </div>
+      </section>
 
       {/* Why Choose Us - Matching Stats Design */}
       <section className="relative py-20 bg-gray-900 overflow-hidden">
@@ -285,40 +287,54 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Join Us CTA - Minimal & Powerful */}
-      <section className="py-32 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <FadeIn>
-              <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
-                <Zap className="w-4 h-4" />
-                Now Hiring Drivers
+      {/* Join Us CTA - Professional Style */}
+      <section className="relative py-32 bg-white overflow-hidden">
+        {/* Subtle yellow neon glow background */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px]" />
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-5xl mx-auto">
+            <FadeIn className="text-center mb-16">
+              <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-gray-100 bg-white shadow-sm">
+                <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                <span className="text-sm font-medium text-gray-700">Now Hiring Professional Drivers</span>
               </div>
 
               <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
-                Drive with <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-orange-500">Forare</span>
+                Drive with <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-yellow-500 to-orange-500">Forare</span>
               </h2>
 
-              <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto">
-                Join thousands of drivers earning on their own schedule. Flexible hours, weekly payouts, and full support.
+              <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+                Join our elite network of professional drivers. Benefit from competitive earnings, flexible scheduling, and a platform built for your success.
               </p>
+            </FadeIn>
 
-              <div className="flex flex-wrap justify-center gap-8 mb-12">
-                {[
-                  { icon: "💰", label: "Weekly Payouts" },
-                  { icon: "⏰", label: "Flexible Schedule" },
-                  { icon: "🎁", label: "Sign-up Bonus" },
-                  { icon: "📱", label: "Easy App" }
-                ].map((benefit, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <span className="text-3xl">{benefit.icon}</span>
-                    <span className="text-gray-700 font-medium">{benefit.label}</span>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+              {[
+                { title: "Weekly Payouts", desc: "Predictable, on-time earnings every week" },
+                { title: "Flexible Schedule", desc: "Drive whenever it suits your lifestyle" },
+                { title: "Full Support", desc: "24/7 assistance from our dedicated team" },
+                { title: "Fleet Access", desc: "Options for vehicle leasing and maintenance" }
+              ].map((benefit, i) => (
+                <FadeIn key={i} delay={i * 0.1} className="group">
+                  <div className="relative h-full bg-white border border-gray-100 rounded-2xl p-8 hover:border-primary/30 hover:shadow-xl transition-all duration-300">
+                    {/* Subtle neon glow on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
+                    
+                    <div className="relative z-10">
+                      <h4 className="text-lg font-bold text-gray-900 mb-3">{benefit.title}</h4>
+                      <p className="text-gray-600 text-sm leading-relaxed">{benefit.desc}</p>
+                    </div>
                   </div>
-                ))}
-              </div>
+                </FadeIn>
+              ))}
+            </div>
 
+            <FadeIn className="text-center">
               <Link href="/join-us">
-                <Button size="lg" className="h-14 px-10 bg-gray-900 hover:bg-gray-800 text-white rounded-full text-lg font-bold shadow-lg hover:shadow-xl transition-all duration-300">
+                <Button size="lg" className="h-14 px-10 bg-gradient-to-r from-gray-900 to-gray-800 hover:from-primary hover:to-yellow-500 text-white hover:shadow-lg rounded-full text-lg font-bold transition-all duration-300">
                   Apply Now
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
