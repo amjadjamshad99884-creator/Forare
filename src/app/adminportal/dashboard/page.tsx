@@ -39,6 +39,7 @@ export default function AdminDashboard() {
     const [activeTab, setActiveTab] = useState<TabType>('overview');
     const [submissions, setSubmissions] = useState<Submission[]>([]);
     const [filteredSubmissions, setFilteredSubmissions] = useState<Submission[]>([]);
+    const [statusFilter, setStatusFilter] = useState<'all' | 'PENDING' | 'RESOLVED'>('all');
     const [loading, setLoading] = useState(true);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [stats, setStats] = useState<Stats>({ total: 0, pending: 0, resolved: 0, today: 0, byType: {} });
@@ -93,11 +94,12 @@ export default function AdminDashboard() {
     }, [isAuthenticated]);
 
     useEffect(() => {
+        let filtered = submissions;
+
+        // Filter by tab/type
         if (activeTab === 'overview') {
-            setFilteredSubmissions(submissions);
-        } else if (activeTab === 'analytics') {
-            setFilteredSubmissions([]);
-        } else {
+            filtered = submissions;
+        } else if (activeTab !== 'analytics') {
             const typeMap: Record<string, string> = {
                 contact: 'Contact',
                 booking: 'Booking',
@@ -105,9 +107,16 @@ export default function AdminDashboard() {
                 moving: 'Moving',
                 driver: 'Driver'
             };
-            setFilteredSubmissions(submissions.filter(s => s.type === typeMap[activeTab]));
+            filtered = submissions.filter(s => s.type === typeMap[activeTab]);
         }
-    }, [activeTab, submissions]);
+
+        // Filter by status
+        if (statusFilter !== 'all') {
+            filtered = filtered.filter(s => s.status === statusFilter);
+        }
+
+        setFilteredSubmissions(filtered);
+    }, [activeTab, submissions, statusFilter]);
 
     const handleLogout = () => {
         sessionStorage.removeItem('admin_authenticated');
@@ -160,8 +169,8 @@ export default function AdminDashboard() {
                             key={item.id}
                             onClick={() => setActiveTab(item.id)}
                             className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${activeTab === item.id
-                                    ? 'bg-primary text-gray-900 shadow-lg'
-                                    : 'text-gray-400 hover:text-white hover:bg-white/5'
+                                ? 'bg-primary text-gray-900 shadow-lg'
+                                : 'text-gray-400 hover:text-white hover:bg-white/5'
                                 }`}
                         >
                             <item.icon className="w-5 h-5 flex-shrink-0" />
@@ -272,11 +281,38 @@ export default function AdminDashboard() {
                     {/* Individual Form Tabs */}
                     {['contact', 'booking', 'delivery', 'moving', 'driver'].includes(activeTab) && (
                         <div className="space-y-6">
+                            {/* Status Filter */}
+                            <div className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-xl p-4">
+                                <label className="text-gray-300 font-medium">Filter by Status:</label>
+                                <select
+                                    value={statusFilter}
+                                    onChange={(e) => setStatusFilter(e.target.value as 'all' | 'PENDING' | 'RESOLVED')}
+                                    className="bg-gray-800 border border-white/20 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
+                                >
+                                    <option value="all">All Status</option>
+                                    <option value="PENDING">Pending</option>
+                                    <option value="RESOLVED">Resolved</option>
+                                </select>
+                                <div className="flex-1" />
+                                <span className="text-gray-400 text-sm">
+                                    Showing {filteredSubmissions.length} of {submissions.filter(s => {
+                                        const typeMap: Record<string, string> = {
+                                            contact: 'Contact',
+                                            booking: 'Booking',
+                                            delivery: 'Delivery',
+                                            moving: 'Moving',
+                                            driver: 'Driver'
+                                        };
+                                        return s.type === typeMap[activeTab];
+                                    }).length} submissions
+                                </span>
+                            </div>
+
                             {loading ? (
                                 <div className="text-center py-12 text-gray-500">Loading submissions...</div>
                             ) : filteredSubmissions.length === 0 ? (
                                 <div className="text-center py-12 text-gray-500 bg-white/5 rounded-xl border border-white/10">
-                                    No {activeTab} submissions found.
+                                    No {activeTab} submissions found{statusFilter !== 'all' ? ` with status: ${statusFilter}` : ''}.
                                 </div>
                             ) : (
                                 <div className="space-y-4">

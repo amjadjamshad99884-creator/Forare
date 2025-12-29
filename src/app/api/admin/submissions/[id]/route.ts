@@ -27,12 +27,24 @@ export async function DELETE(
 ) {
     try {
         const { id } = await context.params;
-        await prisma.submission.delete({
+        console.log('Attempting to delete submission with ID:', id);
+
+        const result = await prisma.submission.delete({
             where: { id },
         });
+
+        console.log('Successfully deleted submission:', result);
         return NextResponse.json({ message: 'Submission deleted successfully' });
-    } catch (error) {
+    } catch (error: any) {
         console.error('Error deleting submission:', error);
-        return NextResponse.json({ error: 'Failed to delete submission' }, { status: 500 });
+        console.error('Error details:', {
+            message: error.message,
+            code: error.code,
+            meta: error.meta,
+        });
+        return NextResponse.json({
+            error: 'Failed to delete submission',
+            details: error.message
+        }, { status: 500 });
     }
 }
