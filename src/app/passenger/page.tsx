@@ -8,7 +8,18 @@ export default function PassengerPage() {
         <div className="flex flex-col min-h-screen bg-white">
             {/* Hero Section - Ultra Modern */}
             <section className="relative pt-32 pb-24 bg-gray-900 overflow-hidden">
-                <div className="absolute inset-0">
+                <div className="absolute inset-0 z-0">
+                    <Image
+                        src="/images/passenger-hero.png"
+                        alt="Passenger Services"
+                        fill
+                        className="object-cover opacity-50"
+                        priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-gray-900/90 via-gray-900/80 to-gray-900/95" />
+                </div>
+
+                <div className="absolute inset-0 pointer-events-none z-0">
                     <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px]" />
                     <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-yellow-500/10 rounded-full blur-[120px]" />
                 </div>
