@@ -153,7 +153,7 @@ export default function FAQPage() {
                             ))
                         ) : (
                             <div className="text-center py-20">
-                                <p className="text-xl text-gray-500 italic">No results found for "{searchTerm}"</p>
+                                <p className="text-xl text-gray-500 italic">No results found for &quot;{searchTerm}&quot;</p>
                             </div>
                         )}
 

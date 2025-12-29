@@ -22,7 +22,7 @@ export default function DriverPage() {
                             Drive with Forare
                         </h1>
                         <p className="text-xl text-gray-300 mb-8">
-                            Join Sweden's fastest-growing transport network. Earn competitive rates with flexible hours.
+                            Join Sweden&apos;s fastest-growing transport network. Earn competitive rates with flexible hours.
                         </p>
                         <div className="flex gap-4">
                             <div className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg flex items-center gap-2">

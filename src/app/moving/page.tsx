@@ -34,7 +34,7 @@ export default function MovingPage() {
                             Your World, <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-yellow-500 to-orange-500">Safely</span> Relocated
                         </h1>
                         <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed mb-12">
-                            Expert handling, secure transport, and total peace of mind. Whether it's a home or an entire corporation, we move what matters most to you.
+                            Expert handling, secure transport, and total peace of mind. Whether it&apos;s a home or an entire corporation, we move what matters most to you.
                         </p>
                         <div className="flex flex-wrap justify-center gap-10">
                             <div className="flex items-center gap-3">
@@ -114,7 +114,7 @@ export default function MovingPage() {
                                 <div className="bg-gray-900 p-12 text-white relative overflow-hidden">
                                     <div className="absolute bottom-0 right-0 w-48 h-48 bg-primary/10 rounded-full blur-3xl" />
                                     <h3 className="text-3xl font-bold mb-4">Get a Free Quote</h3>
-                                    <p className="text-gray-400">Tell us about your move, and we'll provide a custom price framework.</p>
+                                    <p className="text-gray-400">Tell us about your move, and we&apos;ll provide a custom price framework.</p>
                                 </div>
                                 <div className="p-10 md:p-14">
                                     <MovingForm />
@@ -132,7 +132,7 @@ export default function MovingPage() {
                         <FadeIn>
                             <div className="mb-10 text-6xl opacity-10 font-black tracking-tighter select-none">TRUSTED PARTNER</div>
                             <p className="text-lg text-gray-500 italic leading-relaxed">
-                                "The relocation of our Stockholm tech headquarters was flawless. The Forare team handled over 200 workstations with zero equipment failure and total adherence to the 48-hour timeline."
+                                &quot;The relocation of our Stockholm tech headquarters was flawless. The Forare team handled over 200 workstations with zero equipment failure and total adherence to the 48-hour timeline.&quot;
                             </p>
                             <div className="mt-8 flex flex-col items-center">
                                 <p className="font-bold text-gray-900">Erik Jönsson</p>

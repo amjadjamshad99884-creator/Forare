@@ -43,7 +43,7 @@ export default function DeliveryPage() {
                     {/* Left Column: Business Benefits */}
                     <div className="lg:col-span-6 space-y-16">
                         <FadeIn direction="right">
-                            <h2 className="text-4xl font-bold text-gray-900 mb-10 leading-tight">Why the world's brands <br />choose Forare.</h2>
+                            <h2 className="text-4xl font-bold text-gray-900 mb-10 leading-tight">Why the world&apos;s brands <br />choose Forare.</h2>
                             <div className="grid sm:grid-cols-2 gap-8">
                                 {[
                                     { icon: Clock, title: "Unmatched Speed", desc: "Automated routing algorithms that find the fastest path, every time." },
@@ -73,7 +73,7 @@ export default function DeliveryPage() {
                                     ))}
                                 </div>
                                 <div className="mt-10 pt-10 border-t border-white/10">
-                                    <p className="text-gray-400 text-sm mb-6 italic">"Forare has reduced our shipping overhead by 22% in the first quarter."</p>
+                                    <p className="text-gray-400 text-sm mb-6 italic">&quot;Forare has reduced our shipping overhead by 22% in the first quarter.&quot;</p>
                                     <div className="flex items-center gap-3">
                                         <div className="w-10 h-10 rounded-full bg-gray-800" />
                                         <div>
