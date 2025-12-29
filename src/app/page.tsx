@@ -359,30 +359,52 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Testimonials (Refined) */}
-      <section className="py-24 bg-white">
+      {/* Testimonials - Dark & Modern */}
+      <section className="py-32 bg-gradient-to-b from-[#0B1120] to-[#151B2B]">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16">Trusted by Thousands</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <FadeIn className="text-center mb-20">
+            <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">Trusted by Thousands</h2>
+            <p className="text-xl text-gray-400">Real stories from our satisfied customers</p>
+          </FadeIn>
+
+          <div className="grid md:grid-cols-3 gap-6">
             {[
-              { name: "Anna S.", role: "Regular Commuter", text: "The most reliable service I've used. The cars are always clean and the drivers are professional." },
-              { name: "TechSolutions Ltd.", role: "Corporate Partner", text: "Forare transformed our local logistics. The automated billing and tracking features are a game changer." },
-              { name: "Maria K.", role: "Home Mover", text: "Moving house was actually pleasant with their team. They handled everything with such care." },
+              { name: "Anna S.", role: "Regular Commuter", text: "The most reliable service I've used. The cars are always clean and the drivers are professional.", rating: 5 },
+              { name: "TechSolutions Ltd.", role: "Corporate Partner", text: "Forare transformed our local logistics. The automated billing and tracking features are a game changer.", rating: 5 },
+              { name: "Maria K.", role: "Home Mover", text: "Moving house was actually pleasant with their team. They handled everything with such care.", rating: 5 },
             ].map((testimonial, index) => (
-              <FadeIn key={index} delay={index * 0.1} className="bg-gray-50 p-10 rounded-3xl relative">
-                <div className="absolute top-10 right-10 text-primary/20">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z" /></svg>
-                </div>
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-4 shadow-lg">
-                    {testimonial.name[0]}
+              <FadeIn key={index} delay={index * 0.1} className="group">
+                <div className="relative h-full bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/[0.05] transition-all duration-500">
+                  {/* Quote icon */}
+                  <div className="absolute top-8 right-8 text-primary/10 group-hover:text-primary/20 transition-colors">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z" />
+                    </svg>
                   </div>
-                  <div>
-                    <h4 className="font-bold text-lg text-gray-900">{testimonial.name}</h4>
-                    <p className="text-sm text-primary font-medium">{testimonial.role}</p>
+
+                  {/* Rating */}
+                  <div className="flex gap-1 mb-6">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                    ))}
+                  </div>
+
+                  {/* Testimonial text */}
+                  <p className="text-gray-300 text-lg leading-relaxed mb-8 italic">
+                    "{testimonial.text}"
+                  </p>
+
+                  {/* Author */}
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-blue-500 flex items-center justify-center text-white font-bold text-lg shadow-lg">
+                      {testimonial.name[0]}
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-white">{testimonial.name}</h4>
+                      <p className="text-sm text-gray-400">{testimonial.role}</p>
+                    </div>
                   </div>
                 </div>
-                <p className="text-gray-600 italic text-lg leading-relaxed">"{testimonial.text}"</p>
               </FadeIn>
             ))}
           </div>
