@@ -1,6 +1,8 @@
 import { Trash2, CheckCircle, XCircle } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { ConfirmDialog } from "@/components/ui/confirm-dialog";
+import { Toast } from "@/components/ui/toast";
 
 interface Submission {
     id: string;
@@ -17,6 +19,9 @@ interface AdminSubmissionItemProps {
 
 export default function AdminSubmissionItem({ submission, onUpdate }: AdminSubmissionItemProps) {
     const [isLoading, setIsLoading] = useState(false);
+    const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+    const [showToast, setShowToast] = useState(false);
+    const [toastMessage, setToastMessage] = useState({ type: 'success' as 'success' | 'error', message: '' });
 
     const handleStatusUpdate = async (newStatus: string) => {
         setIsLoading(true);
@@ -27,27 +32,47 @@ export default function AdminSubmissionItem({ submission, onUpdate }: AdminSubmi
                 body: JSON.stringify({ status: newStatus }),
             });
             if (res.ok) {
+                setToastMessage({ type: 'success', message: 'Status updated successfully!' });
+                setShowToast(true);
                 onUpdate();
+            } else {
+                setToastMessage({ type: 'error', message: 'Failed to update status' });
+                setShowToast(true);
             }
         } catch (error) {
             console.error("Failed to update status", error);
+            setToastMessage({ type: 'error', message: 'Failed to update status' });
+            setShowToast(true);
         } finally {
             setIsLoading(false);
         }
     };
 
-    const handleDelete = async () => {
-        if (!confirm("Are you sure you want to delete this submission?")) return;
+    const handleDeleteClick = () => {
+        setShowDeleteDialog(true);
+    };
+
+    const handleDeleteConfirm = async () => {
         setIsLoading(true);
         try {
             const res = await fetch(`/api/admin/submissions/${submission.id}`, {
                 method: "DELETE",
             });
             if (res.ok) {
-                onUpdate();
+                setShowDeleteDialog(false);
+                setToastMessage({ type: 'success', message: 'Submission deleted successfully!' });
+                setShowToast(true);
+                setTimeout(() => {
+                    onUpdate();
+                }, 1000);
+            } else {
+                setToastMessage({ type: 'error', message: 'Failed to delete submission' });
+                setShowToast(true);
             }
         } catch (error) {
             console.error("Failed to delete submission", error);
+            setToastMessage({ type: 'error', message: 'Failed to delete submission' });
+            setShowToast(true);
         } finally {
             setIsLoading(false);
         }
@@ -132,13 +157,33 @@ export default function AdminSubmissionItem({ submission, onUpdate }: AdminSubmi
                 <Button
                     variant="ghost"
                     size="sm"
-                    onClick={handleDelete}
+                    onClick={handleDeleteClick}
                     disabled={isLoading}
                     className="text-red-400 hover:bg-red-950/30 hover:text-red-300"
                 >
                     <Trash2 className="w-4 h-4" />
                 </Button>
             </div>
+
+            {/* Confirmation Dialog */}
+            <ConfirmDialog
+                isOpen={showDeleteDialog}
+                onClose={() => setShowDeleteDialog(false)}
+                onConfirm={handleDeleteConfirm}
+                title="Delete Submission"
+                message="Are you sure you want to delete this submission? This action cannot be undone."
+                confirmText="Yes, Delete"
+                cancelText="No, Cancel"
+                isLoading={isLoading}
+            />
+
+            {/* Success/Error Toast */}
+            <Toast
+                isOpen={showToast}
+                onClose={() => setShowToast(false)}
+                type={toastMessage.type}
+                message={toastMessage.message}
+            />
         </div>
     );
 }
