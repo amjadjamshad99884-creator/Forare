@@ -135,12 +135,12 @@ export default async function Home() {
           <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {/* Moving */}
             <FadeIn delay={0.1} className="group">
-              <div className="relative h-full bg-white border border-gray-200 rounded-3xl p-10 hover:border-gray-300 hover:shadow-lg transition-all duration-300">
-                {/* Subtle gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl" />
+              <div className="relative h-full bg-white border border-gray-200 rounded-3xl p-10 hover:border-primary/30 hover:shadow-xl transition-all duration-300">
+                {/* Gradient overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-yellow-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl" />
 
                 <div className="relative z-10">
-                  <div className="w-14 h-14 rounded-2xl bg-gray-100 flex items-center justify-center mb-6 group-hover:bg-gray-900 transition-colors duration-300">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center mb-6 group-hover:from-primary group-hover:to-yellow-500 transition-all duration-300">
                     <Truck className="w-7 h-7 text-gray-700 group-hover:text-white transition-colors duration-300" />
                   </div>
 
@@ -159,7 +159,7 @@ export default async function Home() {
                   </div>
 
                   <Link href="/moving">
-                    <Button className="w-full bg-gray-900 hover:bg-gray-800 text-white h-12 rounded-full font-semibold transition-all duration-200">
+                    <Button className="w-full bg-gradient-to-r from-gray-900 to-gray-800 hover:from-primary hover:to-yellow-500 hover:shadow-lg text-white h-12 rounded-full font-semibold transition-all duration-300">
                       Get Quote
                       <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
@@ -170,12 +170,12 @@ export default async function Home() {
 
             {/* Delivery */}
             <FadeIn delay={0.2} className="group">
-              <div className="relative h-full bg-white border border-gray-200 rounded-3xl p-10 hover:border-gray-300 hover:shadow-lg transition-all duration-300">
+              <div className="relative h-full bg-white border border-gray-200 rounded-3xl p-10 hover:border-primary/30 hover:shadow-xl transition-all duration-300">
                 {/* Subtle gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-yellow-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl" />
 
                 <div className="relative z-10">
-                  <div className="w-14 h-14 rounded-2xl bg-gray-100 flex items-center justify-center mb-6 group-hover:bg-gray-900 transition-colors duration-300">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center mb-6 group-hover:from-primary group-hover:to-yellow-500 transition-all duration-300">
                     <svg className="w-7 h-7 text-gray-700 group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                     </svg>
@@ -196,7 +196,7 @@ export default async function Home() {
                   </div>
 
                   <Link href="/delivery">
-                    <Button className="w-full bg-gray-900 hover:bg-gray-800 text-white h-12 rounded-full font-semibold transition-all duration-200">
+                    <Button className="w-full bg-gradient-to-r from-gray-900 to-gray-800 hover:from-primary hover:to-yellow-500 hover:shadow-lg text-white h-12 rounded-full font-semibold transition-all duration-300">
                       Ship Now
                       <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
@@ -207,12 +207,12 @@ export default async function Home() {
 
             {/* Passenger */}
             <FadeIn delay={0.3} className="group">
-              <div className="relative h-full bg-white border border-gray-200 rounded-3xl p-10 hover:border-gray-300 hover:shadow-lg transition-all duration-300">
+              <div className="relative h-full bg-white border border-gray-200 rounded-3xl p-10 hover:border-primary/30 hover:shadow-xl transition-all duration-300">
                 {/* Subtle gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-yellow-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl" />
 
                 <div className="relative z-10">
-                  <div className="w-14 h-14 rounded-2xl bg-gray-100 flex items-center justify-center mb-6 group-hover:bg-gray-900 transition-colors duration-300">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center mb-6 group-hover:from-primary group-hover:to-yellow-500 transition-all duration-300">
                     <svg className="w-7 h-7 text-gray-700 group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
                     </svg>
@@ -233,7 +233,7 @@ export default async function Home() {
                   </div>
 
                   <Link href="/passenger">
-                    <Button className="w-full bg-gray-900 hover:bg-gray-800 text-white h-12 rounded-full font-semibold transition-all duration-200">
+                    <Button className="w-full bg-gradient-to-r from-gray-900 to-gray-800 hover:from-primary hover:to-yellow-500 hover:shadow-lg text-white h-12 rounded-full font-semibold transition-all duration-300">
                       Book Ride
                       <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
