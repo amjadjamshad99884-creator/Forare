@@ -253,27 +253,35 @@ export default async function Home() {
             </FadeIn>
           </div>
 
-          {/* Why Choose Us - Elegant Dark Card */}
-          <FadeIn delay={0.4} className="mt-20">
-            <div className="bg-gray-900 rounded-3xl p-12 md:p-16 max-w-5xl mx-auto">
-              <h3 className="text-3xl md:text-4xl font-bold mb-12 text-white text-center">Why choose Forare?</h3>
-              <div className="grid md:grid-cols-3 gap-12">
-                {[
-                  { icon: Shield, title: "Safety First", desc: "Every driver vetted, every ride insured" },
-                  { icon: Zap, title: "Lightning Fast", desc: "Real-time tracking and smart routing" },
-                  { icon: Star, title: "Premium Quality", desc: "Modern fleet, professional service" },
-                ].map((item, i) => (
-                  <div key={i} className="text-center">
-                    <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-white/5 mb-6">
-                      <item.icon className="w-7 h-7 text-white" />
-                    </div>
-                    <h4 className="text-xl font-bold text-white mb-3">{item.title}</h4>
-                    <p className="text-gray-400 leading-relaxed">{item.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+      {/* Why Choose Us - Matching Stats Design */}
+      <section className="relative py-20 bg-gray-900 overflow-hidden">
+        {/* Gradient glow effects */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px]" />
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-yellow-500/15 rounded-full blur-[120px]" />
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <FadeIn className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Why choose Forare?</h2>
+            <p className="text-gray-400 text-lg">Built for reliability, speed, and safety</p>
           </FadeIn>
+
+          <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
+            {[
+              { icon: Shield, title: "Safety First", desc: "Every driver vetted, every ride insured" },
+              { icon: Zap, title: "Lightning Fast", desc: "Real-time tracking and smart routing" },
+              { icon: Star, title: "Premium Quality", desc: "Modern fleet, professional service" },
+            ].map((item, i) => (
+              <FadeIn key={i} delay={i * 0.1} className="text-center group">
+                <div className="inline-flex items-center justify-center w-14 h-14 mb-6 rounded-2xl bg-white/5 border border-white/10 group-hover:bg-gradient-to-br group-hover:from-primary/20 group-hover:to-yellow-500/20 group-hover:border-primary/30 transition-all duration-300">
+                  <item.icon className="w-7 h-7 text-gray-400 group-hover:text-primary transition-colors duration-300" />
+                </div>
+                <h4 className="text-xl font-bold text-white mb-3">{item.title}</h4>
+                <p className="text-gray-400 font-medium group-hover:text-gray-300 transition-colors duration-300">{item.desc}</p>
+              </FadeIn>
+            ))}
+          </div>
         </div>
       </section>
 
