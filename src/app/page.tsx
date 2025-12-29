@@ -39,7 +39,7 @@ export default async function Home() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 mb-8 px-6 py-3 rounded-full bg-white border border-gray-200 shadow-sm">
               <Zap className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-gray-300">Trusted by 500+ businesses across Europe</span>
+              <span className="text-sm font-medium text-gray-700">Trusted by 500+ businesses across Europe</span>
             </div>
 
             {/* Main Heading */}
@@ -92,7 +92,7 @@ export default async function Home() {
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
           <div className="w-6 h-10 border-2 border-gray-300 rounded-full flex items-start justify-center p-2">
-            <div className="w-1.5 h-3 bg-gray-500 rounded-full" />
+            <div className="w-1.5 h-3 bg-gray-400 rounded-full" />
           </div>
         </div>
       </section>
@@ -129,19 +129,14 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Services - Dark with Gradient Neon */}
-      <section className="relative py-32 bg-gray-900 overflow-hidden">
-        {/* Subtle gradient glow */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[150px]" />
-          <div className="absolute bottom-1/4 right-1/3 w-[500px] h-[500px] bg-yellow-500/8 rounded-full blur-[150px]" />
-        </div>
-        <div className="container mx-auto px-4 relative z-10">
+      {/* Services - White Background */}
+      <section className="py-32 bg-white">
+        <div className="container mx-auto px-4">
           <FadeIn className="text-center mb-20 max-w-3xl mx-auto">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
               Everything you need
             </h2>
-            <p className="text-xl text-gray-400">
+            <p className="text-xl text-gray-600">
               Three core services, one seamless experience
             </p>
           </FadeIn>
@@ -150,31 +145,31 @@ export default async function Home() {
           <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {/* Moving */}
             <FadeIn delay={0.1} className="group">
-              <div className="relative h-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-10 hover:bg-gray-900 hover:border-primary/40 transition-all duration-500">
-                {/* Neon glow on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-yellow-500/15 to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl blur-xl" />
+              <div className="relative h-full bg-white border border-gray-200 rounded-3xl p-10 hover:border-primary/30 hover:shadow-xl transition-all duration-300">
+                {/* Gradient overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-yellow-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl" />
 
                 <div className="relative z-10">
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center mb-6 group-hover:from-primary group-hover:to-yellow-500 transition-all duration-300">
                     <Truck className="w-7 h-7 text-gray-700 group-hover:text-white transition-colors duration-300" />
                   </div>
 
-                  <h3 className="text-3xl font-bold mb-4 text-white">Moving</h3>
-                  <p className="text-gray-300 mb-8 leading-relaxed">
+                  <h3 className="text-3xl font-bold mb-4 text-gray-900">Moving</h3>
+                  <p className="text-gray-600 mb-8 leading-relaxed">
                     Professional relocation services with expert handling and secure packing.
                   </p>
 
                   <div className="space-y-3 mb-10">
                     {['Expert Team', 'Secure Packing', 'Full Insurance'].map((item, i) => (
-                      <div key={i} className="flex items-center gap-3 text-gray-300">
-                        <div className="w-1.5 h-1.5 rounded-full bg-gray-500" />
+                      <div key={i} className="flex items-center gap-3 text-gray-700">
+                        <div className="w-1.5 h-1.5 rounded-full bg-gray-400" />
                         <span className="font-medium text-sm">{item}</span>
                       </div>
                     ))}
                   </div>
 
                   <Link href="/moving">
-                    <Button className="w-full bg-gradient-to-r from-gray-900 to-gray-800 hover:from-primary hover:to-yellow-500 hover:shadow-lg text-white h-12 rounded-full font-semibold transition-all duration-300">
+                    <Button className="w-full bg-gradient-to-r from-gray-900 to-gray-800 hover:from-primary hover:to-yellow-500 text-white hover:shadow-lg h-12 rounded-full font-semibold transition-all duration-300">
                       Get Quote
                       <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
@@ -185,9 +180,9 @@ export default async function Home() {
 
             {/* Delivery */}
             <FadeIn delay={0.2} className="group">
-              <div className="relative h-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-10 hover:bg-gray-900 hover:border-primary/40 transition-all duration-300">
+              <div className="relative h-full bg-white border border-gray-200 rounded-3xl p-10 hover:border-primary/30 hover:shadow-xl transition-all duration-300">
                 {/* Subtle gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-yellow-500/15 to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl blur-xl" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-yellow-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl" />
 
                 <div className="relative z-10">
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center mb-6 group-hover:from-primary group-hover:to-yellow-500 transition-all duration-300">
@@ -196,22 +191,22 @@ export default async function Home() {
                     </svg>
                   </div>
 
-                  <h3 className="text-3xl font-bold mb-4 text-white">Delivery</h3>
-                  <p className="text-gray-300 mb-8 leading-relaxed">
+                  <h3 className="text-3xl font-bold mb-4 text-gray-900">Delivery</h3>
+                  <p className="text-gray-600 mb-8 leading-relaxed">
                     Fast and secure delivery network for all your shipping needs.
                   </p>
 
                   <div className="space-y-3 mb-10">
                     {['Real-time Tracking', 'Same-day Options', 'Digital Proof'].map((item, i) => (
-                      <div key={i} className="flex items-center gap-3 text-gray-300">
-                        <div className="w-1.5 h-1.5 rounded-full bg-gray-500" />
+                      <div key={i} className="flex items-center gap-3 text-gray-700">
+                        <div className="w-1.5 h-1.5 rounded-full bg-gray-400" />
                         <span className="font-medium text-sm">{item}</span>
                       </div>
                     ))}
                   </div>
 
                   <Link href="/delivery">
-                    <Button className="w-full bg-gradient-to-r from-gray-900 to-gray-800 hover:from-primary hover:to-yellow-500 hover:shadow-lg text-white h-12 rounded-full font-semibold transition-all duration-300">
+                    <Button className="w-full bg-gradient-to-r from-gray-900 to-gray-800 hover:from-primary hover:to-yellow-500 text-white hover:shadow-lg h-12 rounded-full font-semibold transition-all duration-300">
                       Ship Now
                       <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
@@ -222,9 +217,9 @@ export default async function Home() {
 
             {/* Passenger */}
             <FadeIn delay={0.3} className="group">
-              <div className="relative h-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-10 hover:bg-gray-900 hover:border-primary/40 transition-all duration-300">
+              <div className="relative h-full bg-white border border-gray-200 rounded-3xl p-10 hover:border-primary/30 hover:shadow-xl transition-all duration-300">
                 {/* Subtle gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-yellow-500/15 to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl blur-xl" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-yellow-500/5 to-orange-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl" />
 
                 <div className="relative z-10">
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center mb-6 group-hover:from-primary group-hover:to-yellow-500 transition-all duration-300">
@@ -233,22 +228,22 @@ export default async function Home() {
                     </svg>
                   </div>
 
-                  <h3 className="text-3xl font-bold mb-4 text-white">Passenger</h3>
-                  <p className="text-gray-300 mb-8 leading-relaxed">
+                  <h3 className="text-3xl font-bold mb-4 text-gray-900">Passenger</h3>
+                  <p className="text-gray-600 mb-8 leading-relaxed">
                     Premium rides with verified drivers and premium fleet.
                   </p>
 
                   <div className="space-y-3 mb-10">
                     {['Verified Drivers', 'Premium Fleet', 'Fixed Pricing'].map((item, i) => (
-                      <div key={i} className="flex items-center gap-3 text-gray-300">
-                        <div className="w-1.5 h-1.5 rounded-full bg-gray-500" />
+                      <div key={i} className="flex items-center gap-3 text-gray-700">
+                        <div className="w-1.5 h-1.5 rounded-full bg-gray-400" />
                         <span className="font-medium text-sm">{item}</span>
                       </div>
                     ))}
                   </div>
 
                   <Link href="/passenger">
-                    <Button className="w-full bg-gradient-to-r from-gray-900 to-gray-800 hover:from-primary hover:to-yellow-500 hover:shadow-lg text-white h-12 rounded-full font-semibold transition-all duration-300">
+                    <Button className="w-full bg-gradient-to-r from-gray-900 to-gray-800 hover:from-primary hover:to-yellow-500 text-white hover:shadow-lg h-12 rounded-full font-semibold transition-all duration-300">
                       Book Ride
                       <ArrowRight className="ml-2 w-5 h-5" />
                     </Button>
