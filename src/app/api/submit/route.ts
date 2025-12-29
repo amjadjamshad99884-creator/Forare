@@ -18,16 +18,16 @@ export async function POST(request: Request) {
             );
         }
 
-        // Rate limiting
-        const clientId = getClientIdentifier(request);
-        const rateLimit = checkRateLimit(clientId);
+        // Rate limiting - TEMPORARILY DISABLED FOR TESTING
+        // const clientId = getClientIdentifier(request);
+        // const rateLimit = checkRateLimit(clientId);
 
-        if (!rateLimit.allowed) {
-            return NextResponse.json(
-                { message: 'Too many submissions. Please try again later.' },
-                { status: 429 }
-            );
-        }
+        // if (!rateLimit.allowed) {
+        //     return NextResponse.json(
+        //         { message: 'Too many submissions. Please try again later.' },
+        //         { status: 429 }
+        //     );
+        // }
 
         // Determine submission type based on fields
         let type = 'Unknown';
