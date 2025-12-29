@@ -22,13 +22,13 @@ export default function AboutPage() {
                             <span className="text-sm font-medium text-gray-700">The team behind your seamless transport</span>
                         </div>
                         <h1 className="text-6xl md:text-7xl font-bold mb-8 tracking-tight leading-[1.1] text-gray-900">
-                            We're on a mission to <br />
+                            We&apos;re on a mission to <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-yellow-500 to-orange-500">
                                 Move the World better.
                             </span>
                         </h1>
                         <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-                            Forare isn't just a transport company. We're a technology-driven logistics ecosystem designed to simplify how people and goods move across Europe.
+                            Forare isn&apos;t just a transport company. We&apos;re a technology-driven logistics ecosystem designed to simplify how people and goods move across Europe.
                         </p>
                     </FadeIn>
                 </div>
@@ -56,7 +56,7 @@ export default function AboutPage() {
                                         </div>
                                         <span className="text-sm font-medium">Joined by 10k+ users in 2024</span>
                                     </div>
-                                    <p className="text-lg font-semibold italic">"The most reliable partner we've had in 10 years of operations."</p>
+                                    <p className="text-lg font-semibold italic">&quot;The most reliable partner we&apos;ve had in 10 years of operations.&quot;</p>
                                 </div>
                             </div>
                             {/* Decorative element */}
@@ -70,7 +70,7 @@ export default function AboutPage() {
                                 Powered by Integrity.
                             </h3>
                             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                                Founded with a clear goal: to eliminate the friction in modern transport. In an era where speed is a requirement, we ensure reliability isn't a luxury. Every ride, every delivery, and every relocation is a commitment we take personally.
+                                Founded with a clear goal: to eliminate the friction in modern transport. In an era where speed is a requirement, we ensure reliability isn&apos;t a luxury. Every ride, every delivery, and every relocation is a commitment we take personally.
                             </p>
 
                             <div className="space-y-4">

@@ -380,7 +380,7 @@ export default function AdminDashboard() {
                                             </span>
                                         </div>
                                         <div className="flex justify-between items-center">
-                                            <span className="text-gray-400">Today's Activity</span>
+                                            <span className="text-gray-400">Today&apos;s Activity</span>
                                             <span className="text-2xl font-bold text-purple-400">{stats.today}</span>
                                         </div>
                                     </div>
