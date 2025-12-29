@@ -5,12 +5,13 @@ const prisma = new PrismaClient();
 
 export async function PATCH(
     request: Request,
-    { params }: { params: { id: string } }
+    context: { params: Promise<{ id: string }> }
 ) {
     try {
+        const { id } = await context.params;
         const { status } = await request.json();
         const submission = await prisma.submission.update({
-            where: { id: params.id },
+            where: { id },
             data: { status },
         });
         return NextResponse.json(submission);
@@ -22,11 +23,12 @@ export async function PATCH(
 
 export async function DELETE(
     request: Request,
-    { params }: { params: { id: string } }
+    context: { params: Promise<{ id: string }> }
 ) {
     try {
+        const { id } = await context.params;
         await prisma.submission.delete({
-            where: { id: params.id },
+            where: { id },
         });
         return NextResponse.json({ message: 'Submission deleted successfully' });
     } catch (error) {
