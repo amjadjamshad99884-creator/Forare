@@ -370,7 +370,7 @@ export default async function Home() {
 
                   {/* Text */}
                   <p className="text-gray-700 text-lg mb-8 leading-relaxed">
-                    "{testimonial.text}"
+                    &quot;{testimonial.text}&quot;
                   </p>
 
                   {/* Author */}

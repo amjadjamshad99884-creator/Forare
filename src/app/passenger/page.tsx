@@ -99,7 +99,7 @@ export default function PassengerPage() {
                                 <div className="bg-gray-900 p-10 md:p-14 text-white relative overflow-hidden">
                                     <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-[60px] translate-x-1/2 -translate-y-1/2" />
                                     <h3 className="text-3xl font-bold mb-4">Book Your Ride</h3>
-                                    <p className="text-gray-400">Fill in the details below and we'll handle the rest.</p>
+                                    <p className="text-gray-400">Fill in the details below and we&apos;ll handle the rest.</p>
                                 </div>
                                 <div className="p-10 md:p-14">
                                     <BookingForm />

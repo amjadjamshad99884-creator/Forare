@@ -20,7 +20,7 @@ export default function TermsPage() {
                             <div>
                                 <h2 className="text-2xl font-bold text-gray-900 mb-4">1. Agreement to Terms</h2>
                                 <p>
-                                    These Terms of Use constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you") and Forare ("we," "us" or "our"), concerning your access to and use of our transport services, including any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto.
+                                    These Terms of Use constitute a legally binding agreement made between you, whether personally or on behalf of an entity (&quot;you&quot;) and Forare (&quot;we,&quot; &quot;us&quot; or &quot;our&quot;), concerning your access to and use of our transport services, including any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto.
                                 </p>
                             </div>
 

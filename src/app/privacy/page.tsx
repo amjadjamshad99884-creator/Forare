@@ -32,7 +32,7 @@ export default function PrivacyPage() {
                                 <ul className="list-disc pl-6 mt-4 space-y-2">
                                     <li><strong>Personal Data:</strong> Name, email address, phone number, and address.</li>
                                     <li><strong>Payment Data:</strong> We may collect data necessary to process your payment if you make purchases.</li>
-                                    <li><strong>Location Data:</strong> We may collect information about your device's location to provide transport services.</li>
+                                    <li><strong>Location Data:</strong> We may collect information about your device&apos;s location to provide transport services.</li>
                                 </ul>
                             </div>
 
