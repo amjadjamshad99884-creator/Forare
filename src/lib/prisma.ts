@@ -8,6 +8,9 @@ export const prisma = globalForPrisma.prisma ?? new PrismaClient({
     log: ['query', 'error', 'warn'],
 });
 
+// Disable result caching to prevent stale data
+prisma.$connect();
+
 if (process.env.NODE_ENV !== 'production') {
     globalForPrisma.prisma = prisma;
 }
