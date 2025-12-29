@@ -98,14 +98,14 @@ export function DriverForm() {
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-10 bg-white p-8 md:p-10 rounded-2xl shadow-lg border border-gray-100">
             {/* Personal Information */}
-            <div className="space-y-4">
+            <div className="space-y-6">
                 <h3 className="text-xl font-semibold flex items-center gap-2 pb-2 border-b">
                     <User className="w-5 h-5 text-primary" /> Personal Information
                 </h3>
 
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                         <Label htmlFor="firstName">First Name *</Label>
                         <Input id="firstName" placeholder="John" {...register("firstName")} />
@@ -119,7 +119,7 @@ export function DriverForm() {
                     </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                         <Label htmlFor="email">Email *</Label>
                         <Input id="email" type="email" placeholder="john@example.com" {...register("email")} />
@@ -133,7 +133,7 @@ export function DriverForm() {
                     </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                         <Label htmlFor="city">City *</Label>
                         <Input id="city" placeholder="Stockholm" {...register("city")} />
@@ -149,7 +149,7 @@ export function DriverForm() {
             </div>
 
             {/* License Information */}
-            <div className="space-y-4 pt-4 border-t">
+            <div className="space-y-6 pt-6 border-t">
                 <h3 className="text-xl font-semibold flex items-center gap-2 pb-2 border-b">
                     <FileText className="w-5 h-5 text-primary" /> License Information
                 </h3>
@@ -202,7 +202,7 @@ export function DriverForm() {
             </div>
 
             {/* Service Preferences */}
-            <div className="space-y-4 pt-4 border-t">
+            <div className="space-y-6 pt-6 border-t">
                 <h3 className="text-xl font-semibold flex items-center gap-2 pb-2 border-b">
                     <Briefcase className="w-5 h-5 text-primary" /> Service Preferences
                 </h3>
@@ -261,7 +261,7 @@ export function DriverForm() {
             </div>
 
             {/* Vehicle Information */}
-            <div className="space-y-4 pt-4 border-t">
+            <div className="space-y-6 pt-6 border-t">
                 <h3 className="text-xl font-semibold flex items-center gap-2 pb-2 border-b">
                     <Car className="w-5 h-5 text-primary" /> Vehicle Information
                 </h3>
@@ -283,7 +283,7 @@ export function DriverForm() {
 
                 {ownVehicle === "yes" && (
                     <>
-                        <div className="grid md:grid-cols-2 gap-4">
+                        <div className="grid md:grid-cols-2 gap-6">
                             <div className="space-y-2">
                                 <Label htmlFor="carModel">Vehicle Model</Label>
                                 <Input id="carModel" placeholder="Volvo V90" {...register("carModel")} />
@@ -315,7 +315,7 @@ export function DriverForm() {
             </div>
 
             {/* Experience */}
-            <div className="space-y-4 pt-4 border-t">
+            <div className="space-y-6 pt-6 border-t">
                 <div className="space-y-2">
                     <Label htmlFor="yearsExperience">Years of Professional Driving Experience *</Label>
                     <select
@@ -345,7 +345,7 @@ export function DriverForm() {
             </div>
 
             {/* Consent */}
-            <div className="space-y-2 pt-4 border-t">
+            <div className="space-y-4 pt-6 border-t">
                 <label className="flex items-start gap-2">
                     <input type="checkbox" className="mt-1 accent-primary" {...register("consent")} />
                     <span className="text-sm text-gray-600">

@@ -76,13 +76,13 @@ export function BookingForm() {
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-            <div className="space-y-4">
-                <h3 className="text-xl font-semibold flex items-center gap-2">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 bg-white p-8 md:p-10 rounded-2xl shadow-lg border border-gray-100">
+            <div className="space-y-6">
+                <h3 className="text-xl font-semibold flex items-center gap-2 pb-2 border-b border-gray-100">
                     <MapPin className="w-5 h-5 text-primary" /> Ride Details
                 </h3>
 
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                         <Label htmlFor="pickup">Pickup Location</Label>
                         <Input id="pickup" placeholder="Enter pickup address" {...register("pickup")} />
@@ -96,7 +96,7 @@ export function BookingForm() {
                     </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                         <Label htmlFor="date">Date</Label>
                         <Input id="date" type="date" {...register("date")} />
@@ -132,8 +132,8 @@ export function BookingForm() {
                 </div>
             </div>
 
-            <div className="space-y-4 pt-4 border-t">
-                <h3 className="text-xl font-semibold flex items-center gap-2">
+            <div className="space-y-6 pt-6 border-t">
+                <h3 className="text-xl font-semibold flex items-center gap-2 pb-2">
                     <User className="w-5 h-5 text-primary" /> Contact Details
                 </h3>
 
@@ -143,7 +143,7 @@ export function BookingForm() {
                     {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                         <Label htmlFor="email">Email</Label>
                         <Input id="email" type="email" placeholder="john@example.com" {...register("email")} />

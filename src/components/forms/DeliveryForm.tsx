@@ -70,8 +70,8 @@ export function DeliveryForm() {
     }
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-            <div className="space-y-4">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 bg-white p-8 md:p-10 rounded-2xl shadow-lg border border-gray-100">
+            <div className="space-y-6">
                 <h3 className="text-xl font-semibold flex items-center gap-2">
                     <Building2 className="w-5 h-5 text-primary" /> Company Details
                 </h3>
