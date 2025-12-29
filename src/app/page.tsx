@@ -119,7 +119,138 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Services - Bento Grid (Apple-style) */}
+      {/* Services - Equal 3-Column Grid */}
+      <section className="py-32 bg-white">
+        <div className="container mx-auto px-4">
+          <FadeIn className="text-center mb-20 max-w-3xl mx-auto">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
+              Everything you need
+            </h2>
+            <p className="text-xl text-gray-600">
+              Three core services, one seamless experience
+            </p>
+          </FadeIn>
+
+          {/* Equal 3-Column Grid */}
+          <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {/* Moving */}
+            <FadeIn delay={0.1} className="group">
+              <div className="relative h-full bg-white border-2 border-gray-200 rounded-3xl p-10 hover:border-orange-300 hover:shadow-xl transition-all duration-300">
+                <div className="w-16 h-16 rounded-2xl bg-orange-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Truck className="w-8 h-8 text-orange-600" />
+                </div>
+
+                <h3 className="text-3xl font-bold mb-4 text-gray-900">Moving</h3>
+                <p className="text-gray-600 mb-8 leading-relaxed">
+                  Professional relocation services with expert handling and secure packing.
+                </p>
+
+                <div className="space-y-3 mb-10">
+                  {['Expert Team', 'Secure Packing', 'Full Insurance'].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3 text-gray-700">
+                      <CheckCircle2 className="w-5 h-5 text-orange-600 flex-shrink-0" />
+                      <span className="font-medium">{item}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <Link href="/moving">
+                  <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white h-12 rounded-full font-semibold transition-all duration-200 shadow-sm hover:shadow-md">
+                    Get Quote
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
+              </div>
+            </FadeIn>
+
+            {/* Delivery */}
+            <FadeIn delay={0.2} className="group">
+              <div className="relative h-full bg-white border-2 border-gray-200 rounded-3xl p-10 hover:border-blue-300 hover:shadow-xl transition-all duration-300">
+                <div className="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                  </svg>
+                </div>
+
+                <h3 className="text-3xl font-bold mb-4 text-gray-900">Delivery</h3>
+                <p className="text-gray-600 mb-8 leading-relaxed">
+                  Fast and secure delivery network for all your shipping needs.
+                </p>
+
+                <div className="space-y-3 mb-10">
+                  {['Real-time Tracking', 'Same-day Options', 'Digital Proof'].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3 text-gray-700">
+                      <CheckCircle2 className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                      <span className="font-medium">{item}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <Link href="/delivery">
+                  <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white h-12 rounded-full font-semibold transition-all duration-200 shadow-sm hover:shadow-md">
+                    Ship Now
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
+              </div>
+            </FadeIn>
+
+            {/* Passenger */}
+            <FadeIn delay={0.3} className="group">
+              <div className="relative h-full bg-white border-2 border-gray-200 rounded-3xl p-10 hover:border-yellow-300 hover:shadow-xl transition-all duration-300">
+                <div className="w-16 h-16 rounded-2xl bg-yellow-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                  </svg>
+                </div>
+
+                <h3 className="text-3xl font-bold mb-4 text-gray-900">Passenger</h3>
+                <p className="text-gray-600 mb-8 leading-relaxed">
+                  Premium rides with verified drivers and premium fleet.
+                </p>
+
+                <div className="space-y-3 mb-10">
+                  {['Verified Drivers', 'Premium Fleet', 'Fixed Pricing'].map((item, i) => (
+                    <div key={i} className="flex items-center gap-3 text-gray-700">
+                      <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                      <span className="font-medium">{item}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <Link href="/passenger">
+                  <Button className="w-full bg-primary hover:bg-yellow-500 text-gray-900 h-12 rounded-full font-semibold transition-all duration-200 shadow-sm hover:shadow-md">
+                    Book Ride
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
+              </div>
+            </FadeIn>
+          </div>
+
+          {/* Why Choose Us - Below Services */}
+          <FadeIn delay={0.4} className="mt-16">
+            <div className="bg-gray-900 rounded-3xl p-12 max-w-5xl mx-auto">
+              <h3 className="text-3xl font-bold mb-10 text-white text-center">Why choose Forare?</h3>
+              <div className="grid md:grid-cols-3 gap-8">
+                {[
+                  { icon: Shield, title: "Safety First", desc: "Every driver vetted, every ride insured" },
+                  { icon: Zap, title: "Lightning Fast", desc: "Real-time tracking and smart routing" },
+                  { icon: Star, title: "Premium Quality", desc: "Modern fleet, professional service" },
+                ].map((item, i) => (
+                  <div key={i} className="text-center">
+                    <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-white/10 mb-4">
+                      <item.icon className="w-7 h-7 text-primary" />
+                    </div>
+                    <h4 className="text-xl font-bold text-white mb-3">{item.title}</h4>
+                    <p className="text-gray-400">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
       <section className="py-32 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4">
           <FadeIn className="text-center mb-20 max-w-3xl mx-auto">

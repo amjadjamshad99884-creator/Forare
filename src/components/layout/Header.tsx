@@ -51,8 +51,8 @@ export function Header() {
         <>
             <header
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-                    ? "bg-white/95 backdrop-blur-lg shadow-sm py-2"
-                    : "bg-transparent py-4"
+                        ? "bg-white/98 backdrop-blur-md shadow-sm py-2"
+                        : "bg-white/95 backdrop-blur-md py-3"
                     }`}
             >
                 <div className="container mx-auto px-4 lg:px-6">
@@ -64,7 +64,7 @@ export function Header() {
                             aria-label="Forare Home"
                         >
                             <Image
-                                src={scrolled ? "/images/logo-dark.svg" : "/images/logo-white.svg"}
+                                src="/images/logo-dark.svg"
                                 alt="Forare"
                                 width={160}
                                 height={40}
@@ -81,16 +81,14 @@ export function Header() {
                                     <Link
                                         key={link.href}
                                         href={link.href}
-                                        className={`relative px-4 py-2 text-sm font-medium transition-colors duration-200 ${scrolled
-                                            ? (isActive ? "text-gray-900" : "text-gray-600 hover:text-gray-900")
-                                            : (isActive ? "text-white" : "text-white/80 hover:text-white")
+                                        className={`relative px-4 py-2 text-sm font-medium transition-colors duration-200 ${isActive ? "text-gray-900" : "text-gray-600 hover:text-gray-900"
                                             }`}
                                     >
                                         {link.label}
                                         {isActive && (
                                             <motion.div
                                                 layoutId="activeTab"
-                                                className={`absolute bottom-0 left-0 right-0 h-0.5 ${scrolled ? "bg-primary" : "bg-white"}`}
+                                                className="absolute bottom-0 left-0 right-0 h-0.5 bg-gray-900"
                                                 initial={false}
                                                 transition={{
                                                     type: "spring",
@@ -108,10 +106,7 @@ export function Header() {
                         <div className="hidden lg:flex items-center gap-4">
                             <Link href="/passenger">
                                 <Button
-                                    className={`${scrolled
-                                        ? "bg-primary hover:bg-primary/90 text-gray-900"
-                                        : "bg-white hover:bg-gray-100 text-gray-900"
-                                        } font-semibold px-6 py-2.5 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 hover:scale-105`}
+                                    className="bg-gray-900 hover:bg-gray-800 text-white font-semibold px-6 h-11 rounded-full transition-all duration-200"
                                 >
                                     Book Now
                                 </Button>
@@ -120,18 +115,15 @@ export function Header() {
 
                         {/* Mobile Menu Button */}
                         <button
-                            className={`lg:hidden p-2 rounded-lg transition-colors duration-200 ${scrolled
-                                ? "hover:bg-gray-100 text-gray-700"
-                                : "hover:bg-white/10 text-white"
-                                }`}
+                            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 text-gray-700 transition-colors duration-200"
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
                             aria-expanded={mobileMenuOpen}
                         >
                             {mobileMenuOpen ? (
-                                <X className={`w-6 h-6 ${scrolled ? "text-gray-700" : "text-white"}`} />
+                                <X className="w-6 h-6 text-gray-700" />
                             ) : (
-                                <Menu className={`w-6 h-6 ${scrolled ? "text-gray-700" : "text-white"}`} />
+                                <Menu className="w-6 h-6 text-gray-700" />
                             )}
                         </button>
                     </div>
