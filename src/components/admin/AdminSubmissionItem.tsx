@@ -106,15 +106,22 @@ export default function AdminSubmissionItem({ submission, onUpdate }: AdminSubmi
                 <div>
                     <div className="flex items-center gap-3 mb-2">
                         <span className={`px-2 py-1 rounded text-xs font-bold uppercase tracking-wide 
-                            ${submission.type === 'contact' ? 'bg-blue-500/20 text-blue-300' :
-                                submission.type === 'booking' ? 'bg-purple-500/20 text-purple-300' :
-                                    'bg-gray-500/20 text-gray-300'}`}>
+                            ${submission.type === 'Contact' ? 'bg-blue-500/20 text-blue-300' :
+                                submission.type === 'Booking' ? 'bg-purple-500/20 text-purple-300' :
+                                    submission.type === 'Delivery' ? 'bg-orange-500/20 text-orange-300' :
+                                        submission.type === 'Moving' ? 'bg-cyan-500/20 text-cyan-300' :
+                                            submission.type === 'Driver' ? 'bg-pink-500/20 text-pink-300' :
+                                                'bg-gray-500/20 text-gray-300'}`}>
                             {submission.type}
                         </span>
                         <span className={`px-2 py-1 rounded text-xs font-bold uppercase tracking-wide 
-                            ${submission.status === 'pending' ? 'bg-yellow-500/20 text-yellow-300' :
-                                submission.status === 'resolved' ? 'bg-green-500/20 text-green-300' :
-                                    'bg-red-500/20 text-red-300'}`}>
+                            ${submission.status === 'PENDING' ? 'bg-yellow-500/20 text-yellow-300' :
+                                submission.status === 'IN_PROGRESS' ? 'bg-blue-500/20 text-blue-300' :
+                                    submission.status === 'CONTACTED' ? 'bg-purple-500/20 text-purple-300' :
+                                        submission.status === 'RESOLVED' ? 'bg-green-500/20 text-green-300' :
+                                            submission.status === 'CANCELLED' ? 'bg-red-500/20 text-red-300' :
+                                                submission.status === 'ARCHIVED' ? 'bg-gray-500/20 text-gray-300' :
+                                                    'bg-gray-500/20 text-gray-300'}`}>
                             {submission.status}
                         </span>
                     </div>
@@ -129,31 +136,32 @@ export default function AdminSubmissionItem({ submission, onUpdate }: AdminSubmi
                 {parsePayload(submission.payload)}
             </div>
 
-            <div className="flex justify-end gap-3">
-                {submission.status === 'pending' && (
-                    <Button
-                        variant="outline"
-                        size="sm"
-                        onClick={() => handleStatusUpdate('resolved')}
+            <div className="flex justify-between items-center gap-3">
+                {/* Status Dropdown */}
+                <div className="flex items-center gap-3">
+                    <label className="text-gray-400 text-sm font-medium">Status:</label>
+                    <select
+                        value={submission.status}
+                        onChange={(e) => handleStatusUpdate(e.target.value)}
                         disabled={isLoading}
-                        className="border-green-500/50 text-green-400 hover:bg-green-950 hover:text-green-300"
+                        className={`px-4 py-2 rounded-lg border font-medium text-sm transition-all focus:outline-none focus:ring-2 focus:ring-primary ${submission.status === 'PENDING' ? 'bg-yellow-500/10 border-yellow-500/50 text-yellow-400' :
+                            submission.status === 'IN_PROGRESS' ? 'bg-blue-500/10 border-blue-500/50 text-blue-400' :
+                                submission.status === 'CONTACTED' ? 'bg-purple-500/10 border-purple-500/50 text-purple-400' :
+                                    submission.status === 'RESOLVED' ? 'bg-green-500/10 border-green-500/50 text-green-400' :
+                                        submission.status === 'CANCELLED' ? 'bg-red-500/10 border-red-500/50 text-red-400' :
+                                            'bg-gray-500/10 border-gray-500/50 text-gray-400'
+                            }`}
                     >
-                        <CheckCircle className="w-4 h-4 mr-2" />
-                        Resolve
-                    </Button>
-                )}
-                {submission.status === 'resolved' && (
-                    <Button
-                        variant="outline"
-                        size="sm"
-                        onClick={() => handleStatusUpdate('pending')}
-                        disabled={isLoading}
-                        className="border-yellow-500/50 text-yellow-400 hover:bg-yellow-950 hover:text-yellow-300"
-                    >
-                        <XCircle className="w-4 h-4 mr-2" />
-                        Mark Pending
-                    </Button>
-                )}
+                        <option value="PENDING">📋 Pending</option>
+                        <option value="IN_PROGRESS">⏳ In Progress</option>
+                        <option value="CONTACTED">📞 Contacted</option>
+                        <option value="RESOLVED">✅ Resolved</option>
+                        <option value="CANCELLED">❌ Cancelled</option>
+                        <option value="ARCHIVED">📦 Archived</option>
+                    </select>
+                </div>
+
+                {/* Delete Button */}
                 <Button
                     variant="ghost"
                     size="sm"

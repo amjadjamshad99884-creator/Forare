@@ -39,7 +39,7 @@ export default function AdminDashboard() {
     const [activeTab, setActiveTab] = useState<TabType>('overview');
     const [submissions, setSubmissions] = useState<Submission[]>([]);
     const [filteredSubmissions, setFilteredSubmissions] = useState<Submission[]>([]);
-    const [statusFilter, setStatusFilter] = useState<'all' | 'PENDING' | 'RESOLVED'>('all');
+    const [statusFilter, setStatusFilter] = useState<'all' | 'PENDING' | 'IN_PROGRESS' | 'CONTACTED' | 'RESOLVED' | 'CANCELLED' | 'ARCHIVED'>('all');
     const [loading, setLoading] = useState(true);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [stats, setStats] = useState<Stats>({ total: 0, pending: 0, resolved: 0, today: 0, byType: {} });
@@ -286,12 +286,16 @@ export default function AdminDashboard() {
                                 <label className="text-gray-300 font-medium">Filter by Status:</label>
                                 <select
                                     value={statusFilter}
-                                    onChange={(e) => setStatusFilter(e.target.value as 'all' | 'PENDING' | 'RESOLVED')}
+                                    onChange={(e) => setStatusFilter(e.target.value as typeof statusFilter)}
                                     className="bg-gray-800 border border-white/20 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary"
                                 >
                                     <option value="all">All Status</option>
-                                    <option value="PENDING">Pending</option>
-                                    <option value="RESOLVED">Resolved</option>
+                                    <option value="PENDING">📋 Pending</option>
+                                    <option value="IN_PROGRESS">⏳ In Progress</option>
+                                    <option value="CONTACTED">📞 Contacted</option>
+                                    <option value="RESOLVED">✅ Resolved</option>
+                                    <option value="CANCELLED">❌ Cancelled</option>
+                                    <option value="ARCHIVED">📦 Archived</option>
                                 </select>
                                 <div className="flex-1" />
                                 <span className="text-gray-400 text-sm">
