@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { ArrowRight, CheckCircle2, Clock, Map as MapIcon, Shield, Star, Truck, User, Zap, Globe, Award } from "lucide-react";
 import { prisma } from '@/lib/prisma';
+// Trigger fresh build v2
 
 async function getContent() {
   try {
