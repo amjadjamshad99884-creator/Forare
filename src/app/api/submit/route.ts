@@ -1,12 +1,33 @@
 import { NextResponse } from 'next/server';
 import { PrismaClient } from '@prisma/client';
 import { sendEmail, getConfirmationEmail } from '@/lib/email';
+import { checkRateLimit, getClientIdentifier } from '@/lib/rateLimit';
 
 const prisma = new PrismaClient();
 
 export async function POST(request: Request) {
     try {
         const body = await request.json();
+
+        // Honeypot protection - if this field is filled, it's a bot
+        if (body.website || body.honeypot) {
+            console.log('Bot detected via honeypot');
+            return NextResponse.json(
+                { message: 'Submission received successfully' },
+                { status: 200 }
+            );
+        }
+
+        // Rate limiting
+        const clientId = getClientIdentifier(request);
+        const rateLimit = checkRateLimit(clientId);
+
+        if (!rateLimit.allowed) {
+            return NextResponse.json(
+                { message: 'Too many submissions. Please try again later.' },
+                { status: 429 }
+            );
+        }
 
         // Determine submission type based on fields
         let type = 'Unknown';

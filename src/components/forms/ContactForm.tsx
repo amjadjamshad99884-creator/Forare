@@ -105,6 +105,15 @@ export function ContactForm() {
                 </div>
             </div>
 
+            {/* Honeypot field - hidden from users, bots will fill it */}
+            <input
+                type="text"
+                name="website"
+                style={{ display: 'none' }}
+                tabIndex={-1}
+                autoComplete="off"
+            />
+
             <Button type="submit" className="w-full text-lg h-12" disabled={isSubmitting}>
                 {isSubmitting ? "Sending..." : "Send Message"} <Send className="ml-2 w-4 h-4" />
             </Button>
