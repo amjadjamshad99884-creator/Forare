@@ -58,7 +58,7 @@ export default async function Home() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-              <Link href="/business">
+              <Link href="#services">
                 <Button size="lg" className="h-14 px-8 bg-gray-900 hover:bg-gray-800 text-white rounded-full text-base font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
                   Get Started
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -130,7 +130,7 @@ export default async function Home() {
       </section>
 
       {/* Services - White Background */}
-      <section className="py-32 bg-white">
+      <section id="services" className="py-32 bg-white">
         <div className="container mx-auto px-4">
           <FadeIn className="text-center mb-20 max-w-3xl mx-auto">
             <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
@@ -322,7 +322,7 @@ export default async function Home() {
                   <div className="relative h-full bg-white border border-gray-100 rounded-2xl p-8 hover:border-primary/30 hover:shadow-xl transition-all duration-300">
                     {/* Subtle neon glow on hover */}
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" />
-                    
+
                     <div className="relative z-10">
                       <h4 className="text-lg font-bold text-gray-900 mb-3">{benefit.title}</h4>
                       <p className="text-gray-600 text-sm leading-relaxed">{benefit.desc}</p>
