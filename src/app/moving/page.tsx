@@ -8,7 +8,18 @@ export default function MovingPage() {
         <div className="flex flex-col min-h-screen bg-white">
             {/* Hero Section - Ultra Modern */}
             <section className="relative pt-32 pb-24 bg-gray-900 overflow-hidden">
-                <div className="absolute inset-0">
+                <div className="absolute inset-0 z-0">
+                    <Image
+                        src="/images/moving-hero.jpg"
+                        alt="Moving Services"
+                        fill
+                        className="object-cover opacity-50"
+                        priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-gray-900/80 via-gray-900/70 to-gray-900/90" />
+                </div>
+
+                <div className="absolute inset-0 z-0 pointer-events-none">
                     <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[150px]" />
                     <div className="absolute top-1/2 left-0 w-80 h-80 bg-orange-500/10 rounded-full blur-[100px]" />
                 </div>
