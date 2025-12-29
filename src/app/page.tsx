@@ -101,125 +101,147 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 3-Pillar Services Section - Card Layout */}
-      <section className="py-24 bg-gray-50">
+      {/* Core Services Section - Minimalistic & Professional */}
+      <section className="py-32 bg-gradient-to-b from-[#0B1120] to-[#151B2B]">
         <div className="container mx-auto px-4">
-          <FadeIn className="text-center mb-16 max-w-3xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Our Core Services</h2>
-            <p className="text-xl text-gray-600">
-              Comprehensive transport solutions tailored to your needs. Professional, reliable, and always on time.
+          <FadeIn className="text-center mb-20 max-w-3xl mx-auto">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white">Our Core Services</h2>
+            <p className="text-xl text-gray-400">
+              Comprehensive transport solutions designed for modern businesses
             </p>
           </FadeIn>
 
-          <div className="grid lg:grid-cols-3 gap-8">
-            {/* 1. Moving Logistics Card */}
-            <FadeIn delay={0.1} className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col group border border-gray-100">
-              <div className="relative h-64 overflow-hidden">
-                <Image
-                  src="/images/service-moving.png"
-                  alt="Moving Logistics"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60" />
-                <div className="absolute bottom-4 left-4">
-                  <div className="inline-block px-3 py-1 rounded-full bg-orange-500 text-white text-xs font-bold tracking-wide uppercase">
-                    Moving
+          <div className="grid lg:grid-cols-3 gap-6">
+            {/* 1. Moving Logistics */}
+            <FadeIn delay={0.1} className="group">
+              <div className="relative h-full bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/[0.05] transition-all duration-500 overflow-hidden">
+                {/* Subtle gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                <div className="relative z-10">
+                  {/* Icon */}
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-orange-500/20 to-orange-600/10 border border-orange-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <Truck className="w-7 h-7 text-orange-400" />
                   </div>
+
+                  {/* Title */}
+                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-orange-400 transition-colors">
+                    Moving Logistics
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-gray-400 mb-8 leading-relaxed">
+                    Professional relocation services for homes and offices with expert handling and secure packing.
+                  </p>
+
+                  {/* Features */}
+                  <div className="space-y-3 mb-8">
+                    {['Expert Handling Team', 'Secure Packing', 'Full Insurance'].map((item, i) => (
+                      <div key={i} className="flex items-center gap-3 text-sm text-gray-300">
+                        <div className="w-1.5 h-1.5 rounded-full bg-orange-400" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* CTA */}
+                  <Link href="/moving">
+                    <Button className="w-full bg-white/5 border border-white/10 text-white hover:bg-orange-500 hover:border-orange-500 h-12 rounded-xl font-medium transition-all duration-300 group/btn">
+                      Get Quote
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
                 </div>
-              </div>
-              <div className="p-8 flex flex-col flex-grow">
-                <h3 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-orange-600 transition-colors">Seamless Relocation</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed flex-grow">
-                  Professional moving services for homes and offices. We handle heavy lifting and packing with extreme care.
-                </p>
-                <div className="space-y-3 mb-8">
-                  {['Expert Handling Team', 'Secure Packing', 'Full Insurance'].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3 text-sm text-gray-700">
-                      <CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
-                <Link href="/moving" className="mt-auto">
-                  <Button className="w-full bg-gray-900 text-white hover:bg-orange-600 h-12 rounded-xl text-base font-semibold transition-colors">
-                    Get Moving Quote <ArrowRight className="ml-2 w-4 h-4" />
-                  </Button>
-                </Link>
               </div>
             </FadeIn>
 
-            {/* 2. Delivery Solutions Card */}
-            <FadeIn delay={0.2} className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col group border border-gray-100">
-              <div className="relative h-64 overflow-hidden">
-                <Image
-                  src="/images/service-delivery.png"
-                  alt="Delivery Solutions"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60" />
-                <div className="absolute bottom-4 left-4">
-                  <div className="inline-block px-3 py-1 rounded-full bg-blue-500 text-white text-xs font-bold tracking-wide uppercase">
-                    Delivery
+            {/* 2. Delivery Solutions */}
+            <FadeIn delay={0.2} className="group">
+              <div className="relative h-full bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/[0.05] transition-all duration-500 overflow-hidden">
+                {/* Subtle gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                <div className="relative z-10">
+                  {/* Icon */}
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-600/10 border border-blue-500/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-7 h-7 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg>
                   </div>
+
+                  {/* Title */}
+                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-blue-400 transition-colors">
+                    Delivery Solutions
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-gray-400 mb-8 leading-relaxed">
+                    Fast and secure delivery network ensuring your items reach safely and on time, every time.
+                  </p>
+
+                  {/* Features */}
+                  <div className="space-y-3 mb-8">
+                    {['Real-time Tracking', 'Same-day Options', 'Digital Proof'].map((item, i) => (
+                      <div key={i} className="flex items-center gap-3 text-sm text-gray-300">
+                        <div className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* CTA */}
+                  <Link href="/delivery">
+                    <Button className="w-full bg-white/5 border border-white/10 text-white hover:bg-blue-500 hover:border-blue-500 h-12 rounded-xl font-medium transition-all duration-300 group/btn">
+                      Ship Now
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
                 </div>
-              </div>
-              <div className="p-8 flex flex-col flex-grow">
-                <h3 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-blue-600 transition-colors">Fast & Secure Delivery</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed flex-grow">
-                  From urgent documents to bulk cargo, our delivery network ensures your items reach safely and on time.
-                </p>
-                <div className="space-y-3 mb-8">
-                  {['Real-time Tracking', 'Same-day Options', 'Digital Proof'].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3 text-sm text-gray-700">
-                      <CheckCircle2 className="w-4 h-4 text-blue-500 flex-shrink-0" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
-                <Link href="/delivery" className="mt-auto">
-                  <Button className="w-full bg-gray-900 text-white hover:bg-blue-600 h-12 rounded-xl text-base font-semibold transition-colors">
-                    Ship Now <ArrowRight className="ml-2 w-4 h-4" />
-                  </Button>
-                </Link>
               </div>
             </FadeIn>
 
-            {/* 3. Passenger Rides Card */}
-            <FadeIn delay={0.3} className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col group border border-gray-100">
-              <div className="relative h-64 overflow-hidden">
-                <Image
-                  src="/images/service-passenger.png"
-                  alt="Passenger Rides"
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60" />
-                <div className="absolute bottom-4 left-4">
-                  <div className="inline-block px-3 py-1 rounded-full bg-primary text-white text-xs font-bold tracking-wide uppercase">
-                    Passenger
+            {/* 3. Passenger Rides */}
+            <FadeIn delay={0.3} className="group">
+              <div className="relative h-full bg-white/[0.03] backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/[0.05] transition-all duration-500 overflow-hidden">
+                {/* Subtle gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                <div className="relative z-10">
+                  {/* Icon */}
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-yellow-600/10 border border-primary/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <svg className="w-7 h-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                    </svg>
                   </div>
+
+                  {/* Title */}
+                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-primary transition-colors">
+                    Passenger Rides
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-gray-400 mb-8 leading-relaxed">
+                    Premium passenger transport for daily commutes or special occasions with verified drivers.
+                  </p>
+
+                  {/* Features */}
+                  <div className="space-y-3 mb-8">
+                    {['Verified Drivers', 'Premium Fleet', 'Fixed Pricing'].map((item, i) => (
+                      <div key={i} className="flex items-center gap-3 text-sm text-gray-300">
+                        <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* CTA */}
+                  <Link href="/passenger">
+                    <Button className="w-full bg-white/5 border border-white/10 text-white hover:bg-primary hover:border-primary h-12 rounded-xl font-medium transition-all duration-300 group/btn">
+                      Book Ride
+                      <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
                 </div>
-              </div>
-              <div className="p-8 flex flex-col flex-grow">
-                <h3 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-primary transition-colors">Travel in Comfort</h3>
-                <p className="text-gray-600 mb-6 leading-relaxed flex-grow">
-                  Experience the new standard in passenger transport. Daily commutes or special occasions in style.
-                </p>
-                <div className="space-y-3 mb-8">
-                  {['Verified Drivers', 'Premium Fleet', 'Fixed Pricing'].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3 text-sm text-gray-700">
-                      <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
-                <Link href="/passenger" className="mt-auto">
-                  <Button className="w-full bg-gray-900 text-white hover:bg-primary h-12 rounded-xl text-base font-semibold transition-colors">
-                    Book a Ride <ArrowRight className="ml-2 w-4 h-4" />
-                  </Button>
-                </Link>
               </div>
             </FadeIn>
           </div>
@@ -264,35 +286,74 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Driver CTA (Redesigned) */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gray-900">
-          <Image
-            src="/images/driver-enrollment.png"
-            alt="Driver Background"
-            fill
-            className="object-cover opacity-20"
-          />
+      {/* Become a Partner - Minimalistic & Premium */}
+      <section className="py-32 relative overflow-hidden bg-gradient-to-b from-[#151B2B] to-[#0B1120]">
+        {/* Abstract background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-primary/10 blur-[150px]" />
         </div>
+
         <div className="container mx-auto px-4 relative z-10">
-          <div className="bg-primary rounded-3xl p-12 md:p-20 flex flex-col md:flex-row items-center justify-between gap-12 shadow-2xl">
-            <div className="md:w-1/2 text-white">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Become a Partner</h2>
-              <p className="text-xl text-white/90 mb-8 leading-relaxed">
-                Join the fastest growing transport network. Whether you have a car, van, or truck, we have work for you.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <div className="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-semibold">Weekly Payouts</div>
-                <div className="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-semibold">Flexible Schedule</div>
-                <div className="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-semibold">Sign-up Bonus</div>
+          <div className="max-w-5xl mx-auto">
+            {/* Glass card effect */}
+            <div className="relative bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-3xl p-12 md:p-16 overflow-hidden">
+              {/* Gradient overlay on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-blue-500/5 opacity-50" />
+
+              <div className="relative z-10 flex flex-col lg:flex-row items-center gap-12">
+                {/* Content */}
+                <div className="flex-1 text-center lg:text-left">
+                  <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-primary/20 bg-primary/10 text-sm font-medium text-primary">
+                    <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                    Now Hiring Drivers
+                  </div>
+
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight">
+                    Become a <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-yellow-300">Partner</span>
+                  </h2>
+
+                  <p className="text-xl text-gray-400 mb-10 leading-relaxed max-w-2xl">
+                    Join the fastest growing transport network. Whether you have a car, van, or truck, we have opportunities for you.
+                  </p>
+
+                  {/* Benefits */}
+                  <div className="grid sm:grid-cols-3 gap-4 mb-10">
+                    {[
+                      { icon: '💰', label: 'Weekly Payouts' },
+                      { icon: '⏰', label: 'Flexible Schedule' },
+                      { icon: '🎁', label: 'Sign-up Bonus' }
+                    ].map((benefit, i) => (
+                      <div key={i} className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                        <span className="text-2xl">{benefit.icon}</span>
+                        <span className="text-sm font-medium text-gray-300">{benefit.label}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* CTA */}
+                  <Link href="/join-us">
+                    <Button size="lg" className="bg-gradient-to-r from-primary to-yellow-400 text-black hover:shadow-2xl hover:shadow-primary/50 h-14 px-10 rounded-full text-lg font-bold transition-all duration-300 hover:scale-105">
+                      Apply Now
+                      <ArrowRight className="ml-2 w-5 h-5" />
+                    </Button>
+                  </Link>
+                </div>
+
+                {/* Stats */}
+                <div className="lg:w-80 grid grid-cols-2 gap-4">
+                  {[
+                    { value: '1000+', label: 'Active Drivers' },
+                    { value: '€3.5k', label: 'Avg. Monthly' },
+                    { value: '4.9★', label: 'Driver Rating' },
+                    { value: '24/7', label: 'Support' }
+                  ].map((stat, i) => (
+                    <div key={i} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 text-center hover:bg-white/10 transition-all duration-300">
+                      <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
+                      <div className="text-sm text-gray-400">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-            <div className="md:w-auto">
-              <Link href="/join-us">
-                <Button size="lg" className="bg-white text-primary hover:bg-gray-100 h-16 px-12 rounded-full text-xl font-bold shadow-xl">
-                  Apply Now
-                </Button>
-              </Link>
             </div>
           </div>
         </div>
