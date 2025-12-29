@@ -1,6 +1,6 @@
 import { MovingForm } from "@/components/forms/MovingForm";
 import { FadeIn } from "@/components/animations/FadeIn";
-import { Box, Calendar, CheckCircle2, Truck, ShieldCheck, Zap, Star, MapPin } from "lucide-react";
+import { Box, Calendar, CheckCircle2, Truck, ShieldCheck, Zap, Star, MapPin, ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 export default function MovingPage() {
