@@ -97,9 +97,15 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Stats Section - Minimal */}
-      <section className="py-24 bg-white border-y border-gray-100">
-        <div className="container mx-auto px-4">
+      {/* Stats Section - Dark with Gradient Glow */}
+      <section className="relative py-32 bg-gray-900 overflow-hidden">
+        {/* Gradient glow effects */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px]" />
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-yellow-500/15 rounded-full blur-[120px]" />
+        </div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
             {[
               { value: "500+", label: "Corporate Clients", icon: User },
@@ -107,12 +113,16 @@ export default async function Home() {
               { value: "25+", label: "Cities Covered", icon: Globe },
               { value: "99.9%", label: "On-Time Rate", icon: Award },
             ].map((stat, index) => (
-              <FadeIn key={index} delay={index * 0.1} className="text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 mb-4 rounded-2xl bg-gray-100">
-                  <stat.icon className="w-6 h-6 text-gray-700" />
+              <FadeIn key={index} delay={index * 0.1} className="text-center group">
+                <div className="inline-flex items-center justify-center w-14 h-14 mb-6 rounded-2xl bg-white/5 border border-white/10 group-hover:bg-gradient-to-br group-hover:from-primary/20 group-hover:to-yellow-500/20 group-hover:border-primary/30 transition-all duration-300">
+                  <stat.icon className="w-7 h-7 text-gray-400 group-hover:text-primary transition-colors duration-300" />
                 </div>
-                <div className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">{stat.value}</div>
-                <div className="text-gray-600 font-medium">{stat.label}</div>
+                <div className="text-5xl md:text-6xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-yellow-500 transition-all duration-300">
+                  {stat.value}
+                </div>
+                <div className="text-gray-400 font-medium group-hover:text-gray-300 transition-colors duration-300">
+                  {stat.label}
+                </div>
               </FadeIn>
             ))}
           </div>
